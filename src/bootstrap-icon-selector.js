@@ -14,9 +14,12 @@
       this.currentPage = 0;
       this.maxPages = 1;
 
-      this.element.querySelectorAll('[data-bs-toggle="dropdown"]').forEach(el => {
-        el.replaceChildren(this.createIcon(this.options.initialIcon));
-      });
+      // Replace dropdown toggle icons if initial icon is set
+      if (this.options.initialIcon) {
+        this.element.querySelectorAll('[data-bs-toggle="dropdown"]').forEach(el => {
+          el.replaceChildren(this.createIcon(this.options.initialIcon));
+        });
+      }
 
       this.onClickOnIcon = this.onClickOnIcon.bind(this);
       this.onClickNextPageButton = this.onClickNextPageButton.bind(this);
@@ -58,7 +61,7 @@
 
     static get DEFAULTS() {
       return {
-        initialIcon: "bi bi-globe",
+        initialIcon: null,
         iconSet: "bootstrapIcons",
         maxColumns: 4,
         maxRows: 3,
@@ -147,6 +150,7 @@
 
       if (icons.length === 0) {
         this.$icons.replaceChildren(this.createNotFound());
+        this.updatePagination();
         return;
       }
 
@@ -216,7 +220,9 @@
 
       const div = this.createElement('div', "col");
 
-      div.appendChild(span)
+      div.appendChild(span);
+
+      this.maxPages = 1;
 
       return div;
     }
@@ -313,8 +319,6 @@
 
       return this.createElement('i', classNames);
     }
-
-
   }
 
   // Plugin definition
