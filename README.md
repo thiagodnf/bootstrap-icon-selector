@@ -1,4 +1,4 @@
-<img src="docs/images/logo.png>
+<img src="docs/images/logo.png" width="80px">
 
 # Bootstrap Icon Selector
 
