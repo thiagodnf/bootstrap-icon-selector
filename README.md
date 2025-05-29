@@ -1,2 +1,4 @@
-# bootstrap-icons-selector
+# Bootstrap Icon Selector
+
+A fast, lightweight, dependency-free JavaScript library for intuitive icon browsing and selection
 
