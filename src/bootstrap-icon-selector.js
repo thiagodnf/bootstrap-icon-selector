@@ -1,3 +1,6 @@
+const bootstrapIcons = require("./iconsets/bootstrapIcons");
+const flagIcons = require("./iconsets/flagIcons");
+
 (function () {
 
   'use strict';

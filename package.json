@@ -1,0 +1,21 @@
+{
+    "name": "bootstrap-icon-selector",
+    "author": "Thiago Ferreira",
+    "description": "A fast, lightweight, dependency-free JavaScript library for intuitive icon browsing and selection",
+    "version": "1.0.0",
+    "license": "MIT",
+    "main": "index.js",
+    "engines": {
+        "node": ">=22.16.0"
+    },
+    "scripts": {
+        "update-dependencies": "ncu -u",
+        "build": "npx esbuild src/bootstrap-icon-selector.js --bundle --outfile=dist/bundle.js --sourcemap --platform=browser --external:"
+    },
+    "dependencies": {
+        "@vercel/ncc": "^0.38.3"
+    },
+    "devDependencies": {
+        "esbuild": "^0.25.5"
+    }
+}
